@@ -86,5 +86,5 @@ if __name__ == "__main__":
     h = predict(testData, w)#进行预测
     # 4、保存最终的预测结果
     print "---------- 4.save prediction ------------"
-    save_result("result", h)
-    
+    print np.mat(h)
+    save_result("result.model", np.mat(h))

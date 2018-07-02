@@ -95,5 +95,5 @@ if __name__ == "__main__":
     w = lr_train_bgd(feature, label, 1000, 0.01)
     # 3、保存最终的模型
     print "---------- 3.save model ------------"
-    save_model("weights", w)
+    save_model("weights.model", w)
     
