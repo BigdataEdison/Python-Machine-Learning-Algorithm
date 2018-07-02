@@ -118,12 +118,15 @@ if __name__ == "__main__":
 	# 1、导入用户商品矩阵
 	print "------------ 1.load data -------------"
 	dataMat = load_data("data.txt")
+	print dataMat
 	# 2、将用户商品矩阵转换成邻接表的存储
 	print "------------ 2.generate dict --------------"
 	data_dict = generate_dict(dataMat)
+	print data_dict
 	# 3、利用PersonalRank计算
 	print "------------ 3.PersonalRank --------------"
 	rank = PersonalRank(data_dict, 0.85, "U_0", 500)
+	print rank
 	# 4、根据rank结果进行商品推荐
 	print "------------ 4.recommend -------------"
 	result = recommend(data_dict, rank, "U_0")
