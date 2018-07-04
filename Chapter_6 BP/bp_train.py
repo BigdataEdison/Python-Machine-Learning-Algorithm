@@ -224,14 +224,17 @@ if __name__ == "__main__":
     # 1、导入数据
     print "--------- 1.load data ------------"
     feature, label, n_class = load_data("data.txt")
+    print feature, label, n_class
     # 2、训练网络模型
     print "--------- 2.training ------------"
     w0, w1, b0, b1 = bp_train(feature, label, 20, 1000, 0.1, n_class)
+    print w0, w1,b0,b1
     # 3、保存最终的模型
     print "--------- 3.save model ------------"
     save_model(w0, w1, b0, b1)
     # 4、得到最终的预测结果
     print "--------- 4.get prediction ------------"
     result = get_predict(feature, w0, w1, b0, b1)
+    print result
     print "训练准确性为：", (1 - err_rate(np.argmax(label, axis=1), np.argmax(result, axis=1)))
     
