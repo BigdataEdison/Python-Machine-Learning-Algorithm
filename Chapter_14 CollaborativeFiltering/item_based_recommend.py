@@ -55,15 +55,20 @@ if __name__ == "__main__":
     # 1、导入用户商品数据
     print "------------ 1. load data ------------"
     data = load_data("data.txt")
+    print data
     # 将用户商品矩阵转置成商品用户矩阵
     data = data.T
+    print data
     # 2、计算商品之间的相似性
     print "------------ 2. calculate similarity between items -------------"    
     w = similarity(data)
+    print w
     # 3、利用用户之间的相似性进行预测评分
     print "------------ 3. predict ------------"    
     predict = item_based_recommend(data, w, 0)
+    print predict
     # 4、进行Top-K推荐
     print "------------ 4. top_k recommendation ------------"
     top_recom = top_k(predict, 2)
+    print top_recom
     print top_recom

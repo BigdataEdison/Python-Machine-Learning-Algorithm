@@ -23,7 +23,6 @@ def load_data(file_path):
                 tmp.append(0)
         data.append(tmp)
     f.close()
-    
     return np.mat(data)
 
 def cos_sim(x, y):
@@ -104,13 +103,17 @@ if __name__ == "__main__":
     # 1、导入用户商品数据
     print "------------ 1. load data ------------"
     data = load_data("data.txt")
+    print data
     # 2、计算用户之间的相似性
     print "------------ 2. calculate similarity between users -------------"    
     w = similarity(data)
+    print w
     # 3、利用用户之间的相似性进行推荐
     print "------------ 3. predict ------------"    
     predict = user_based_recommend(data, w, 0)
+    print predict
     # 4、进行Top-K推荐
     print "------------ 4. top_k recommendation ------------"
     top_recom = top_k(predict, 2)
+    print top_recom
     print top_recom
