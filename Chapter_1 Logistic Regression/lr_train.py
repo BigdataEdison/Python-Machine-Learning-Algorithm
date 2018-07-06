@@ -63,7 +63,6 @@ def error_rate(h, label):
     output: err/m(float):错误率
     '''
     m = np.shape(h)[0]
-    
     sum_err = 0.0
     for i in xrange(m):
         if h[i, 0] > 0 and (1 - h[i, 0]) > 0:
@@ -95,5 +94,5 @@ if __name__ == "__main__":
     w = lr_train_bgd(feature, label, 1000, 0.01)
     # 3、保存最终的模型
     print "---------- 3.save model ------------"
-    save_model("weights.model", w)
+    save_model("weights", w)
     
