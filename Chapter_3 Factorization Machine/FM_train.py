@@ -87,7 +87,7 @@ def stocGradAscent(dataMatrix, classLabels, k, max_iter, alpha):
     
     # 3、返回最终的FM模型的参数
     return w0, w, v
-
+    
 def getCost(predict, classLabels):
     '''计算预测准确性
     input:  predict(list)预测值
@@ -166,11 +166,11 @@ def save_model(file_name, w0, w, v):
         f.write("\t".join(v_tmp) + "\n")
     f.close()
      
-   
+    
 if __name__ == "__main__":
     # 1、导入训练数据
     print "---------- 1.load data ---------"
-    dataTrain, labelTrain = loadDataSet("data_1.txt")
+    dataTrain, labelTrain = loadDataSet("data.txt")
     print "---------- 2.learning ---------"
     # 2、利用随机梯度训练FM模型
     w0, w, v = stocGradAscent(np.mat(dataTrain), labelTrain, 3, 10000, 0.01)
