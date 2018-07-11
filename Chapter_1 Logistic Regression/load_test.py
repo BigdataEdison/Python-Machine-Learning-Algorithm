@@ -26,9 +26,6 @@ def load_data(file_name):
         feature_data.append(feature_tmp)
         label_data.append(lable_tmp)
     f.close()  # 关闭文件
-    print feature_data
-    print "======"
-    print label_data
     return np.mat(feature_data), np.mat(label_data)
 
 if __name__ == "__main__":
@@ -38,4 +35,3 @@ if __name__ == "__main__":
     # 2、训练LR模型
     print feature
     print label
-    print "---------- 2.training ------------"

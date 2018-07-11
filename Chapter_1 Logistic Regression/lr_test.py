@@ -78,6 +78,7 @@ if __name__ == "__main__":
     print "---------- 1.load model ------------"
     w = load_weight("weights")
     n = np.shape(w)[1]
+    print np.shape(w)
     # 2、导入测试数据
     print "---------- 2.load data ------------"
     testData = load_data("test_data", n)
@@ -86,5 +87,5 @@ if __name__ == "__main__":
     h = predict(testData, w)#进行预测
     # 4、保存最终的预测结果
     print "---------- 4.save prediction ------------"
-    print np.mat(h)
-    save_result("result.model", np.mat(h))
+    #print np.mat(h)
+    save_result("result", np.mat(h))

@@ -44,7 +44,8 @@ def lr_train_bgd(feature, label, maxCycle, alpha):
     output: w(mat):权重
     '''
     n = np.shape(feature)[1]  # 特征个数
-    w = np.mat(np.ones((n, 1)))  # 初始化权重
+    # (200,3) np.shape(feature)[0] 表示特征矩阵的行数，np.shape(feature)[1] 表示特征矩阵的个数
+    w = np.mat(np.ones((n, 1)))  # 初始化权重  初始化三个1的一个矩阵
     i = 0
     while i <= maxCycle:  # 在最大迭代次数的范围内
         i += 1  # 当前的迭代次数
@@ -89,9 +90,12 @@ if __name__ == "__main__":
     # 1、导入训练数据
     print "---------- 1.load data ------------"
     feature, label = load_data("data.txt")
+    print feature
+    print label
     # 2、训练LR模型
     print "---------- 2.training ------------"
     w = lr_train_bgd(feature, label, 1000, 0.01)
+    print w
     # 3、保存最终的模型
     print "---------- 3.save model ------------"
     save_model("weights", w)
