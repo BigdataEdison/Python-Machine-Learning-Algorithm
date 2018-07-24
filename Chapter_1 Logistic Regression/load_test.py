@@ -19,10 +19,10 @@ def load_data(file_name):
         lable_tmp = []
         lines = line.strip().split("\t")
         feature_tmp.append(1)  # 偏置项
+        print len(lines)
         for i in xrange(len(lines) - 1):
             feature_tmp.append(float(lines[i]))
         lable_tmp.append(float(lines[-1]))
-        
         feature_data.append(feature_tmp)
         label_data.append(lable_tmp)
     f.close()  # 关闭文件
@@ -31,7 +31,7 @@ def load_data(file_name):
 if __name__ == "__main__":
     # 1、导入训练数据
     print "---------- 1.load data ------------"
-    feature, label = load_data("data.txt")
+    feature, label = load_data("data1.txt")
     # 2、训练LR模型
     print feature
     print label
